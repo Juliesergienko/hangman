@@ -148,6 +148,9 @@ def hangman(secret_word):
                 warnings_left -= 1
                 if warnings_left < 0:
                     guesses_left -= 1
+                    if guesses_left < 0:
+                        print("Sorry, you ran out of guesses. The word was {}.".format(secret_word))
+                        return
                     print("{} You have no warnings left so you lose one guess. You have {} guesses left.".format(error_message, guesses_left))
                 else:
                     print("{} You have {} warnings left: {}".format(
@@ -288,6 +291,9 @@ def hangman_with_hints(secret_word):
                 warnings_left -= 1
                 if warnings_left < 0:
                     guesses_left -= 1
+                    if guesses_left < 0:
+                        print("Sorry, you ran out of guesses. The word was {}.".format(secret_word))
+                        return
                     print("{} You have no warnings left so you lose one guess. You have {} guesses left.".format(error_message, guesses_left))
                 else:
                     print("{} You have {} warnings left: {}".format(
